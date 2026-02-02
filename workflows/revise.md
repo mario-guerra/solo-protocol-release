@@ -1,0 +1,5 @@
+---
+description: Revise a plan based on the critique
+---
+
+I want you to revise the plan to address every single one of these issues, in detail, using well established patterns that follow best practices. You should not be writing code unless it's example template code, leave coding to the implementer. You specify the what and why, laev the how to the coding agent. No half-assed solutions. Don't be lazy, I want your absolute best effort. On the flipside, you find the simplest cleanest approach to solving a problem, with due consideration given to tradeoffs like cost versus performance versus reliability versus accessiblity. It is entirely possible to overengineer a solution to a problem if not careful, but you are careful. You always think through various options, discarding multiple bad ideas before landing on the perfect one.
