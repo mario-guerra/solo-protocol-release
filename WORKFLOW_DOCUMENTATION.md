@@ -65,6 +65,7 @@ Custom slash commands in `.cursor/commands/` define specialized agent personas. 
 
 | Command | Persona | Purpose |
 |---------|---------|---------|
+|------------------|-------------------------|-----------------------------------------------------------|
 | `/resume` | Context Loader | Resume from `.tmp/SESSION_MEMORY.md` |
 | `/architect` | Principal Architect | Generate technical specifications |
 | `/design` | UX Oracle | Design UI/UX when interface is impacted |
@@ -72,9 +73,12 @@ Custom slash commands in `.cursor/commands/` define specialized agent personas. 
 | `/revise` | Senior Designer | Address critique with best practices |
 | `/tickets` | Technical PM | Decompose approved specs into actionable tickets |
 | `/code` | Principal Engineer | Implement with TDD, zero-bug tolerance |
+| `/code++` | Staff/Principal Engineer | High-fidelity refactoring with reference-first safety |
 | `/test` | Test Runner | Run all tests, ensure "green and clean" |
 | `/review` | Senior Staff Engineer | Formal code audit with severity matrix |
 | `/fix` | Staff SRE | Remediate all issues from review |
+
+![Code++ High-Fidelity Workflow](docs/assets/commands/code++.png)
 | `/memory` | Context Manager | Write session handoff document |
 
 ---
@@ -91,7 +95,13 @@ Custom slash commands in `.cursor/commands/` define specialized agent personas. 
                               ▼ (explicit approval)
 ┌─────────────────────────────────────────────────────────────┐
 │                   IMPLEMENTATION PHASE                      │
-│              /code → "continue" → "continue"                │
+│            ┌─────────┐                                      │
+│            │  /code  │──┐                                   │
+│            └─────────┘  │                                   │
+│                         ├──→ "continue" → "continue"        │
+│            ┌─────────┐  │                                   │
+│            │ /code++ │──┘                                   │
+│            └─────────┘                                      │
 └─────────────────────────────────────────────────────────────┘
                               │
                               ▼ (implementation complete)
@@ -320,6 +330,25 @@ User: finish all the tickets, don't stop till the code work is done.
 
 AI: [Implements all remaining tickets in sequence]
 ```
+
+### Phase 6b: High-Fidelity Refactoring (Staff/Principal Level)
+
+**Command:** `/code++`
+
+![Code++ Reference-First Workflow](docs/assets/commands/code++.png)
+
+For complex refactoring spanning multiple functions or files, use `/code++`. This workflow enforces **Reference-First Safety** to prevent "fix forwarding" from broken states.
+
+**The Logic:**
+1. **Analyze & Challenge**: Study specs, identify dependencies, and document edge cases.
+2. **Create Reference Implementation**: Build a complete, correct solution in a separate `REFERENCE.py` file before touching production code.
+3. **Draft Tests FIRST**: Define validation criteria and tests based on the reference.
+4. **Validate Reference Logic**: Ensure the reference is bulletproof.
+5. **Plan Incremental Application**: Break the fix into small, reversible, testable steps.
+6. **Apply with Testing**: Each step is applied and verified with syntax checks and tests.
+7. **Full Suite Verification**: Zero-bug tolerance check across the entire codebase.
+
+**When to use:** Multi-step refactoring, bug fixes spanning multiple components, or recovery from broken edits.
 
 ### Phase 7: Review
 
