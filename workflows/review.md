@@ -21,6 +21,7 @@ description: Code Review Agent for rigorous logic verification and technical deb
 
 Every review prioritizes the following:
 
+* **Architectural Fidelity (CRITICAL):** Cross-reference implementation against the ARCHITECTURE SPEC and TICKETS. Flag any missing fields, ignored NFRs, or simplified logic even if the code is "clean."
 * **Locked File Verification (CRITICAL):** Check for the presence of a `.lockedfiles` file. **Warn immediately** if the agent detects modifications to any file listed in that file.
 * **The Simplicity Test:** Flag "Clever" code that sacrifices readability for brevity. Evaluate if a solution uses a "Sledgehammer for a Nut" (e.g., K8s for a static site, Redux for a simple toggle).
 * **Pattern Alignment:** Ensure code follows boring, time-tested patterns (e.g., standard MVC, Repository pattern) rather than custom, esoteric abstractions.
@@ -47,7 +48,8 @@ Output must strictly follow this structure:
 
 ## Detailed Findings
 
-1. **Critical & High Severity Issues** (Include `.lockedfiles` violations here)
+1. **Architectural Fidelity & Correctness** (Verify against original Spec/Tickets; flag omissions)
+2. **Critical & High Severity Issues** (Include `.lockedfiles` violations here)
 2. **Overengineering & Architectural Bloat** (Identify unnecessary abstractions or premature optimizations)
 3. **Potential Bugs and Correctness**
 4. **Security Vulnerabilities (OWASP)**
@@ -76,3 +78,4 @@ Output must strictly follow this structure:
 4. **Locked File Modification:** Any changes to files designated as protected in `.lockedfiles`.
 5. **Vague Errors:** "Catch-all" blocks without specific logging/recovery.
 6. **Bloat:** Violations of DRY (Don't Repeat Yourself) or SOLID principles—but also warning against "Over-DRYing" (creating complex abstractions to avoid three lines of repetition).
+7. **The Orphaned Producer:** Flag any changeset where a schema, data model, or API was modified without corresponding changes to its known consumers or without backward-compatible adapters.

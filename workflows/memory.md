@@ -1,4 +1,8 @@
-Write a memory document to `.tmp/SESSION_MEMORY.md` for context handoff. This file will be your ONLY context when resuming work.
+---
+description: 
+---
+
+Write a memory document to `.tmp/SESSION_MEMORY.md` for context handoff. You *must* use this exact file saved in this exact location, or your memory will be lost. This file will be your ONLY context when resuming work. 
 
 ### If `.tmp/SESSION_MEMORY.md` Already Exists
 1. Read it first

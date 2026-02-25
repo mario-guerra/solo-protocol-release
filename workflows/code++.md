@@ -15,6 +15,7 @@ description: High-fidelity Coding Agent++ for complex refactoring with reference
 
 ## 🧠 Programming Philosophy (from /code)
 
+- **Specification as Contract**: Architecture and Ticket specs are binding. Simplification is permitted only if 100% of the scope is preserved.
 - **Defensive Design**: Assume inputs are untrusted and external systems will fail
 - **Truth in Tests**: Production code is a LIABILITY without tests
 - **Zero-Bug Tolerance**: Handle all failure modes. Tests must pass with zero warnings
@@ -25,11 +26,13 @@ description: High-fidelity Coding Agent++ for complex refactoring with reference
 ## Step 1: Analyze & Challenge
 
 **Before creating reference:**
-1. Fully understand the problem and requirements
+1. Fully understand the problem and requirements (Functional, NFR, Aesthetic)
 2. Identify all affected components and dependencies
-3. Challenge the approach - is there a simpler way?
-4. Document edge cases and failure modes
-5. **Ask clarifying questions if anything is unclear**
+3. **Specs are Contracts**: Acknowledge every item in the ticket as a must-deliver.
+4. **Blast Radius Audit**: MUST execute a global workspace search (`grep_search`) for data model names, type definitions, or API endpoints being changed to identify unlisted consumers (e.g., in `/ios` or `/frontend`).
+5. Challenge the *mechanics* of the approach, but NEVER the *scope* of the requirements.
+6. Document edge cases and failure modes
+7. **Ask clarifying questions if anything is unclear**
 
 **Output:** Clear problem statement and validation criteria
 
@@ -55,6 +58,7 @@ Create a `FIXES_REFERENCE.py` (or similar) file with:
 [Complete, working implementation with:]
 - Defensive validation (assert statements, type checks)
 - Error handling for all failure modes
+- **Requirement Mapping**: Use comments to link implementation blocks to specific Ticket/Spec IDs.
 - Clear comments explaining non-obvious logic
 - Edge case handling
 
@@ -312,6 +316,7 @@ When you invoke `/code++`, I will:
 
 - **Zero-Bug Tolerance**: All tests pass, zero warnings
 - **Defensive Design**: Validate inputs, handle errors
+- **Boundary Validation**: Mandatory integration tests for boundary layers (e.g., DB read -> API serialization boundary)
 - **Test Coverage**: >80% for changed code
 - **Code Review**: Required before merge
 - **Documentation**: Update docs with changes

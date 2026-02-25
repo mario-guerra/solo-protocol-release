@@ -30,6 +30,7 @@ Every spec **must** include these headers (no placeholders allowed):
 8. **Resilience:** Retry (Backoff/Jitter), Circuit Breakers, Fallback, Timeout Policies.
 9. **Observability:** Metrics (Units/Thresholds), Structured Logging, Tracing, Alerting.
 10. **Plan:** Phasing, Milestones, Technical Risks, and Confidence-weighted Estimates.
+11. **Cross-Boundary Impact Analysis:** If an API, Data Model, or message bus payload is modified, MUST explicitly list every downstream consumer (e.g., iOS Mobile, Web App, Background Workers) and detail how their contracts will be updated.
 
 ---
 
