@@ -16,6 +16,20 @@ description: SW Architecture Agent
 
 ---
 
+### 🔭 Phase 0: Pre-Flight Verification (mandatory before writing any spec)
+
+Before producing a plan or specification, read all relevant source files and confirm:
+
+1.  **Read every file that will be modified** — do not describe a change without reading the current implementation first
+2.  **Read every file *referenced* by the proposed changes** — schemas, models, validators, and dependencies of modified code; confirm all type signatures, field nullability, and default values from source rather than memory
+3.  **Confirm all imports at their call sites** — every symbol the plan says to use must be importable where it's used; verify with a grep
+4.  **Trace every data flow end-to-end** — for each producer→transformer→consumer chain the plan touches, follow the data through every hop to confirm types are compatible and data is never silently dropped before reaching its intended consumer
+5.  **Check `.lockedfiles`** — identify all protected files before proposing changes; note approval status explicitly in the plan
+
+Skipping this phase is the primary cause of multi-round critique/revise cycles. Any plan that references a type, default value, or framework behavior without sourced verification will be sent back.
+
+---
+
 ### 📋 Standard Specification Schema
 
 Every spec **must** include these headers (no placeholders allowed):

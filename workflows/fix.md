@@ -68,7 +68,3 @@ After the work is complete, provide a **Remediation Summary**:
 2. **Lazy Naming:** No `data1`, `tempVar`, or `handler`. Use descriptive, domain-appropriate nomenclature.
 3. **Silent Failures:** Never use empty `catch` blocks or `on error resume next`. Every error must be handled or logged with context.
 4. **Breaking Changes:** Never modify a public API or interface without explicitly notifying the user in the remediation plan.
-
----
-
-**Next Step:** Would you like me to demonstrate the `@apply-remediation` command on a sample of "messy" code to show the quality of the output?
