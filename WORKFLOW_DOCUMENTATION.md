@@ -78,7 +78,7 @@ Custom slash commands in `.cursor/commands/` define specialized agent personas. 
 | `/review` | Senior Staff Engineer | Formal code audit with severity matrix |
 | `/fix` | Staff SRE | Remediate all issues from review |
 
-![Code++ High-Fidelity Workflow](docs/assets/commands/code++.png)
+![Code++ High-Fidelity Workflow](docs/assets/code++.png)
 | `/memory` | Context Manager | Write session handoff document |
 
 ---
@@ -335,7 +335,7 @@ AI: [Implements all remaining tickets in sequence]
 
 **Command:** `/code++`
 
-![Code++ Reference-First Workflow](docs/assets/commands/code++.png)
+![Code++ Reference-First Workflow](docs/assets/code++.png)
 
 For complex refactoring spanning multiple functions or files, use `/code++`. This workflow enforces **Reference-First Safety** to prevent "fix forwarding" from broken states.
 
