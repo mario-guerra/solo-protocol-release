@@ -68,7 +68,7 @@ The Sherlock agent operates as a consulting detective, following the principle: 
 ---
 
 ## 🤝 The Handoff Protocol
-To maintain the highest fidelity, use the `@memory` command (driven by `workflows/memory.md`) to generate session handoffs. This allows your project to span multiple weeks or fresh chat sessions witho[...]
+To maintain the highest fidelity, use the `@memory` command (driven by `workflows/memory.md`) to generate session handoffs. This allows your project to span multiple weeks or fresh chat sessions without loss of project context.
 
 ## 📜 Key Principles
 1. **Plan First**: Never jump directly into implementation.
