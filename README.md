@@ -4,6 +4,8 @@ SOLO is an industrial-grade framework for AI-first software engineering, designe
 
 [SOLO Protocol Blog Post](https://marioguerra.xyz/blog/the-solo-protocol/)
 
+[SOLO Protocol Presentation](https://marioguerra.xyz/solo-protocol/)
+
 ## 🌟 Unified Command Architecture
 This library uses a **Unified Command Architecture** that supports Antigravity, Cursor, and VSCode (GitHub Copilot). All agent templates live in the `workflows/` directory and are exposed to your IDE via specific discovery paths.
 
