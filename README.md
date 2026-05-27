@@ -4,10 +4,8 @@ SOLO is an industrial-grade framework for AI-first software engineering, designe
 
 [SOLO Protocol Blog Post](https://marioguerra.xyz/blog/the-solo-protocol/)
 
-[SOLO Protocol Presentation](https://marioguerra.xyz/solo-protocol/)
-
 ## 🌟 Unified Command Architecture
-This library uses a **Unified Command Architecture** that supports Antigravity, Cursor, and VSCode (GitHub Copilot). All agent templates live in the `workflows/` directory and are exposed to your IDE [...]
+This library uses a **Unified Command Architecture** that supports Antigravity, Cursor, and VSCode (GitHub Copilot). All agent templates live in the `workflows/` directory and are exposed to your IDE via specific discovery paths.
 
 ### 🛠 IDE Setup Guide
 
@@ -38,37 +36,10 @@ SOLO enforces a rigorous **"Plan First, Code Second"** loop.
 - `/review`: Conduct adversarial code audits.
 - `/fix`: Remediate issues identified during review.
 
-### 4. Forensic Investigation & Quality Assurance
-- `/sherlock`: Deep-dive root cause analysis and forensic debugging.
-
----
-
-## 🔍 The Forensic Investigation Loop
-
-The **Sherlock workflow** provides systematic root-cause analysis for anomalies and bugs that survive code review. It enforces rigorous evidence-based deduction to eliminate guesswork.
-
-### Sherlock: Forensic Root-Cause Analysis
-
-The Sherlock agent operates as a consulting detective, following the principle: *"When you have eliminated the impossible, whatever remains, however improbable, must be the truth."*
-
-**Key Capabilities:**
-- `@investigate <symptom>`: Execute deep-dive forensic analysis into production bugs or behavioral anomalies.
-- `@trace-evidence`: Perform systematic audits of logs, state transitions, and network traffic.
-- `@eliminate-impossible`: Systematically validate or invalidate hypotheses through reproduction scripts and isolation tests.
-- `@watson-critique`: Self-audit current deductions to identify logical gaps and missing evidence.
-
-**Core Protocol:**
-1. **Pure Observation**: Collect raw data (logs, stack traces, database snapshots, config) without premature theory formation.
-2. **Multiple Hypotheses**: Document at least three potential root causes before investigation.
-3. **Systematic Elimination**: Invalidate hypotheses through rigorous evidence cross-referencing.
-4. **Logical Synthesis**: Explain *why* the bug exists, not just *where* it is.
-
-**Deliverable:** A forensic case report that includes incident overview, evidence exhibits, chain of logic, and actionable prevention measures.
-
 ---
 
 ## 🤝 The Handoff Protocol
-To maintain the highest fidelity, use the `@memory` command (driven by `workflows/memory.md`) to generate session handoffs. This allows your project to span multiple weeks or fresh chat sessions without loss of project context.
+To maintain the highest fidelity, use the `@memory` command (driven by `workflows/memory.md`) to generate session handoffs. This allows your project to span multiple weeks or fresh chat sessions without context loss.
 
 ## 📜 Key Principles
 1. **Plan First**: Never jump directly into implementation.
